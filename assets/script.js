@@ -16,18 +16,41 @@ const slides = [
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
-//clic flèche gauche et flèche droite
-let arrows = document.querySelectorAll(".arrow img")
+//clic flèche gauche et flèche droite ETAPE 2
+	let arrows = document.querySelectorAll(".arrow img")
 
-for (let i=0; i<arrows.length; i++) {
-	let listArrow = arrows[i];
-	console.log(listArrow);
+	for (let i=0; i<arrows.length; i++) {
+		let listArrow = arrows[i];
+		console.log(listArrow);
 
-	listArrow.addEventListener("click", (event) => {
+		listArrow.addEventListener("click", (event) => {
 		myArrow = event.target
 		console.log(`cliquable : ${myArrow.className}`)
 	})
 }
+
+//Faire apparaitre des bulletPoints, 1 bulletPoint = 1 slide ETAPE 3
+	function createAndInsertDot(className, id, targetSelector) {
+		// Création de la nouvelle div
+		let newDiv = document.createElement("div");
+		newDiv.className = className;
+		newDiv.id = id;
+	  
+		// Obtention de l'élément cible
+		let targetElement = document.querySelector(targetSelector);
+	  
+		// Ajout de la nouvelle div à l'élément cible
+		targetElement.appendChild(newDiv);
+	  }
+
+	  // Utilisation de la fonction pour créer et insérer les divs
+	  createAndInsertDot("dot", "slide1", ".dots");
+	  createAndInsertDot("dot", "slide2", ".dots");
+	  createAndInsertDot("dot", "slide3", ".dots");
+	  createAndInsertDot("dot", "slide3", ".dots");
+
+//le bulletPoint dont le slide s'affiche doit être coloré en blanc
+
 
 
 //carrousel d'images
