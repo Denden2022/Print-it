@@ -49,12 +49,8 @@ const slides = [
 	  createAndInsertDot("dot", "slide3", ".dots");
 	  createAndInsertDot("dot", "slide3", ".dots");
 
-//le bulletPoint dont le slide s'affiche doit être coloré en blanc
-
-
-
 //carrousel d'images
-/*let numero = 0;
+let numero = 0;
 
 function changeSlide(sens) {
     numero = numero + sens;
@@ -62,5 +58,25 @@ function changeSlide(sens) {
         numero = slides.length - 1;
     if (numero > slides.length - 1)
         numero = 0;
-    document.getElementById("slide").src = slides[numero];
-}*/
+
+//récupération des images de chaque slide
+	let imgSlide = document.querySelector(".banner-img")
+    imgSlide.src = "./assets/images/slideshow/" + slides[numero].image;
+
+//récupération des tags de chaque slide
+	let tagSlide = document.querySelector("#banner p")
+	tagSlide.innerHTML = slides[numero].tagLine;
+
+	// ajouter la classe dot_selected à la dot correspondante
+    let dots = document.querySelectorAll(".dot");
+    dots.forEach((dot, index) => {
+        if (index === numero) {
+            dot.classList.add("dot_selected");
+        } else {
+            dot.classList.remove("dot_selected");
+        }
+    });
+}
+
+setInterval("changeSlide(1)", 4000)
+//récupérer les images
