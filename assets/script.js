@@ -52,6 +52,7 @@ const slides = [
 //carrousel d'images
 let numero = 0;
 
+//permet de changer le slide en cliquant sur les flèches
 function changeSlide(sens) {
     numero = numero + sens;
     if (numero < 0)
@@ -59,11 +60,11 @@ function changeSlide(sens) {
     if (numero > slides.length - 1)
         numero = 0;
 
-//récupération des images de chaque slide
+	//récupération des images de chaque slide
 	let imgSlide = document.querySelector(".banner-img")
     imgSlide.src = "./assets/images/slideshow/" + slides[numero].image;
 
-//récupération des tags de chaque slide
+	//récupération des tags de chaque slide
 	let tagSlide = document.querySelector("#banner p")
 	tagSlide.innerHTML = slides[numero].tagLine;
 
@@ -78,5 +79,5 @@ function changeSlide(sens) {
     });
 }
 
+//Appel de la fonction changeSlide
 setInterval("changeSlide(1)", 4000)
-//récupérer les images
