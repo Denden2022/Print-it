@@ -47,7 +47,7 @@ const slides = [
 	  createAndInsertDot("dot", "slide1", ".dots");
 	  createAndInsertDot("dot", "slide2", ".dots");
 	  createAndInsertDot("dot", "slide3", ".dots");
-	  createAndInsertDot("dot", "slide3", ".dots");
+	  createAndInsertDot("dot", "slide4", ".dots");
 
 //carrousel d'images
 let numero = 0;
