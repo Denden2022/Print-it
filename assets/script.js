@@ -29,6 +29,20 @@ const slides = [
 	})
 }
 
+	// Obtention de l'élément cible
+	let targetElement = document.querySelector(".dots");
+
+for (let i=0; i<slides.length; i++) {
+	let newDiv = document.createElement("div");
+	newDiv.className = "dot";
+	newDiv.id = "slide" + i;
+  
+	// Ajout de la nouvelle div à l'élément cible
+	targetElement.appendChild(newDiv);
+  }
+
+
+/*
 //Faire apparaitre des bulletPoints, 1 bulletPoint = 1 slide ETAPE 3
 	function createAndInsertDot(className, id, targetSelector) {
 		// Création de la nouvelle div
@@ -48,6 +62,7 @@ const slides = [
 	  createAndInsertDot("dot", "slide2", ".dots");
 	  createAndInsertDot("dot", "slide3", ".dots");
 	  createAndInsertDot("dot", "slide4", ".dots");
+	  */
 
 //carrousel d'images
 let numero = 0;
